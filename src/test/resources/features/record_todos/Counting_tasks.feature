@@ -1,0 +1,30 @@
+@cucumber
+@completing
+Feature: Counting items left
+
+  To equitably distribute household chores among family members
+  like a forgetful person
+  I want to be able to record the pending tasks of each person
+
+  Scenario: the amount of pending tasks showing properly
+    Given that Jane has a todo list containing Buy some milk, Walk the dog
+    And she has completed the task called 'Walk the dog'
+    When she filters her list to show only Completed tasks
+    Then her todo list should show 1 item left
+
+  Scenario: the amount of pending tasks of more than one person showing properly
+    Given that James has a todo list containing Buy some milk, Walk the dog
+    And that Jill has a todo list containing Buy some milk, Buy some cheese
+    When she adds 'Buy some cereal' to her list
+    Then Jill's todo list should show 3 items left
+    And James's todo list should show 2 items left
+
+  Scenario: the amount of pending tasks when a person completes the tasks
+    Given that James has an empty todo list
+    And he adds 'Buy some milk' to his list
+    And that Jill has a todo list containing Buy some milk, Buy some cheese
+    When she adds 'Buy some cereal' to her list
+    And he completes the task called 'Buy some milk'
+    Then Jill's todo list should show 3 items left
+    And James's todo list should show 0 items left
+
