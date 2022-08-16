@@ -1,5 +1,5 @@
 @cucumber
-@completing
+@counting
 Feature: Counting items left
 
   To equitably distribute household chores among family members

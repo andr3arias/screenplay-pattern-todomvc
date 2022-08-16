@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/new_cases/edit_todo_items.feature"
+        features = "src/test/resources/features/record_todos/deleting_a_number_of_tasks.feature"
 )
 public class CucumberTestSuite {}
